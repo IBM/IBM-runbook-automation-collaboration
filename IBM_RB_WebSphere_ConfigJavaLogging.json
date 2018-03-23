@@ -1,0 +1,38 @@
+
+
+
+
+
+
+{
+    "name": "Websphere - Configure Java logging",
+    "description": "This runbook applies for WAS/ND 8.5.5. It describes the procedure how to use the administrative console in order to configure the right level of Java logging.",
+    "steps": [
+        {
+            "number": 1,
+            "description": "\n<div class=\"p\" dir=\"ltr\">\n<h1 class=\"title topictitle1\"><span style=\"font-size:20px;\">Configuring Java logging using the administrative console</span></h1>\n\n<div class=\"body taskbody\">\n<p class=\"shortdesc\">Java logging provides a standard logging API for your applications. Before applications can log diagnostic information, you need to specify how you want the server to handle log output and what level of logging you require.</p>\n</div>\n\n<p>Using the <u>administrative console,</u> you can:</p>\n\n<ul class=\"ul\">\n\t<li class=\"li\">Enable or disable a particular log, specify where log files are stored and how many log files are kept.</li>\n\t<li class=\"li\">Specify the level of detail in a log, and specify a format for log output.</li>\n\t<li class=\"li\">Set a log level for each logger.</li>\n</ul>\n</div>\n\n<p class=\"p\" dir=\"ltr\">You can change the log configuration <strong>statically</strong> or <strong>dynamically</strong>.<br>\nStatic configuration changes affect applications when you start or restart the application server. Dynamic or run time configuration changes apply immediately.</p>\n\n<p class=\"p\" dir=\"ltr\">&nbsp;</p>\n\n<p class=\"p\" dir=\"ltr\"><strong>Log In to the administrative console use a websphere admin account</strong>.</p>\n\n"
+        },
+        {
+            "number": 2,
+            "description": "\n<p class=\"p\" dir=\"ltr\"><strong>Set the output properties for a log - if you don't want to change these seetings then skip over to:&nbsp; <span class=\"span-grp rba-goto\" data-stepid=\"3\" contenteditable=\"false\">Step 3</span></strong></p>\n\n<ol class=\"ol substeps\" dir=\"ltr\" type=\"a\">\n\t<li class=\"li substep\"><span class=\"ph cmd\">In the navigation pane, click <strong class=\"ph b\">Troubleshooting &gt; Log and trace</strong>.</span></li>\n\t<li class=\"li substep\"><span class=\"ph cmd\">Click the name of the server that you want to work with.</span></li>\n\t<li class=\"li substep\"><span class=\"ph cmd\">Click the name of a system log to configure.</span></li>\n\t<li class=\"li substep\"><span class=\"ph cmd\">To make a static change to the system log configuration, click the <strong class=\"ph b\">Configuration</strong> tab. To change the configuration dynamically, click the <strong class=\"ph b\">Runtime</strong> tab.</span></li>\n\t<li class=\"li substep\"><span class=\"ph cmd\">Change the properties for the selected log according to your needs.</span></li>\n\t<li class=\"li substep\"><span class=\"ph cmd\">Click <strong><span class=\"ph uicontrol\">Apply</span>.</strong></span></li>\n\t<li class=\"li substep\"><span class=\"ph cmd\">Click <strong><span class=\"ph uicontrol\">OK</span>.</strong></span></li>\n</ol>\n\n<p class=\"li substep\" dir=\"ltr\">&nbsp;</p>\n\n"
+        },
+        {
+            "number": 3,
+            "description": "\n<p dir=\"ltr\"><strong><span class=\"ph cmd\">Set the logging levels for your logs:</span></strong></p>\n\n<ol class=\"ol substeps\" dir=\"ltr\" type=\"a\">\n\t<li class=\"li substep\"><span class=\"ph cmd\">In the navigation pane, click <strong class=\"ph b\">Servers &gt; Server Types &gt; WebSphere application servers</strong>.</span></li>\n\t<li class=\"li substep\"><span class=\"ph cmd\">Click the name of the server that you want to work with.</span></li>\n\t<li class=\"li substep\"><span class=\"ph cmd\">Under Troubleshooting, click <span class=\"ph uicontrol\">Logs and Trace</span>.</span></li>\n\t<li class=\"li substep\"><span class=\"ph cmd\">Click <span class=\"ph uicontrol\">Change Log Detail levels</span>.</span></li>\n\t<li class=\"li substep\"><span class=\"ph cmd\">To make a static change to the configuration, click the <strong class=\"ph b\">Configuration</strong> tab. A list of well-known components, packages, and groups is displayed. To change the configuration dynamically, click the <strong class=\"ph b\">Runtime</strong> tab. The list of components, packages, and groups displays all the components that are currently registered on the running server.</span></li>\n\t<li class=\"li substep\"><span class=\"ph cmd\">Select a component, package, or group to set a logging level. </span></li>\n\t<li class=\"li substep\"><span class=\"ph cmd\">[High Performance Extensible Logging] Select whether or not you want to disable the logging and tracing of potentially sensitive data.</span></li>\n\t<li class=\"li substep\"><span class=\"ph cmd\">Click <strong><span class=\"ph uicontrol\">Apply</span></strong>.</span></li>\n\t<li class=\"li substep\"><span class=\"ph cmd\">Click <strong><span class=\"ph uicontrol\">OK</span></strong>.</span></li>\n</ol>\n\n<p class=\"li substep\" dir=\"ltr\">&nbsp;</p>\n\n"
+        },
+        {
+            "number": 4,
+            "description": "\n<p dir=\"ltr\"><span class=\"ph cmd\">To have static configuration changes take effect, stop then restart the application server.</span></p>\n"
+        }
+    ],
+    "parameters": [],
+    "tags": [
+        "Websphere",
+        "WAS-ND",
+        "Windows",
+        "AIX",
+        "Linux",
+        "java",
+        "Logging"
+    ]
+}

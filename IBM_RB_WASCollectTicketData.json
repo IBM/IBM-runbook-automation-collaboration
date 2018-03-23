@@ -1,0 +1,35 @@
+
+
+
+
+
+
+{
+    "name": "Collect Troubleshooting data for IBM Websphere Application Server",
+    "description": "Procedure describing the usage of the ISA Data collector to collect data to send to the IBM support",
+    "steps": [
+        {
+            "number": 1,
+            "description": "\n<p dir=\"ltr\">For WebSphere Application Server V8.5 and prior releases, you can also access the IBM Support Assistant Data Collector tool online:</p>\n\n<p dir=\"ltr\">Go to the <a href=\"http://public.dhe.ibm.com/software/isa/isadc/?taxonomy=ApplicationServer\" target=\"_blank\">IBM Support Assistant Data Collector site for WebSphere Application Server</a>.</p>\n\n"
+        },
+        {
+            "number": 2,
+            "description": "\n<p dir=\"ltr\">Start the ISA Data Collector:</p>\n\n<ul dir=\"ltr\">\n\t<li>To run online, select the option to collect from this system using the current browser and click Start Collection.</li>\n\t<li>To run locally, select the option to collect from this or another system using a downloadable utility. Download and extract the zip file to your WAS_HOME directory.</li>\n</ul>\n\n<p dir=\"ltr\" style=\"margin-left: 40px;\">From a command line, run<br>\nWindows:<br>\n<span class=\"span-grp rba-command\">isadc.bat</span></p>\n\n<p dir=\"ltr\" style=\"margin-left: 40px;\">Linux<br>\n<span class=\"span-grp rba-command\">isadc.sh</span></p>\n\n<p dir=\"ltr\" style=\"margin-left: 40px;\">to run the tool in console mode or launch index.html to use the web interface.</p>\n\n"
+        },
+        {
+            "number": 3,
+            "description": "\n<p dir=\"ltr\">Select the data collector for your problem and click Start.</p>\n\n"
+        },
+        {
+            "number": 4,
+            "description": "\n<p dir=\"ltr\">Follow the prompts to automatically submit the collected data to IBM Support.</p>\n"
+        }
+    ],
+    "parameters": [],
+    "tags": [
+        "collect",
+        "trace",
+        "ISA",
+        "Websphere"
+    ]
+}
