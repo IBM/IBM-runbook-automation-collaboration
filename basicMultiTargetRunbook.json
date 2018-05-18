@@ -1,0 +1,86 @@
+{
+    "name": "Check systems for enough free disc space",
+    "description": "Check systems for enough free disc space",
+    "steps": [
+      {
+        "number": 1,
+        "description": "\n<p dir=\"ltr\">Execute this automation:</p>\n\n<p dir=\"ltr\"><span class=\"span-grp rba-autom\" data-automationid=\"§§exportedAutomation_0_§§\" data-mappingid=\"1\" contenteditable=\"false\">Disc Space Check</span></p>\n\n<p dir=\"ltr\">It will fail on any system with less than the intended amount of free space.</p>\n"
+      }
+    ],
+    "parameters": [
+      {
+        "name": "HOSTNAMES",
+        "description": "Target system where the script will be executed"
+      },
+      {
+        "name": "PATH",
+        "description": "File path on which to check the file system"
+      }
+    ],
+    "tags": [
+      "disc",
+      "free",
+      "filesystem",
+      "linux"
+    ],
+    "automationMappings": [
+      {
+        "mappingId": "1",
+        "parameterMappings": [
+          {
+            "automationParameterName": "target",
+            "parameterMappingType": "parameter",
+            "parameterValue": "HOSTNAMES"
+          },
+          {
+            "automationParameterName": "user",
+            "parameterMappingType": "userName",
+            "parameterValue": "root"
+          },
+          {
+            "automationParameterName": "$path",
+            "parameterMappingType": "parameter",
+            "parameterValue": "PATH"
+          },
+          {
+            "automationParameterName": "$freeSpace",
+            "parameterMappingType": "fixed",
+            "parameterValue": "512"
+          }
+        ]
+      }
+    ],
+    "automations": {
+      "§§exportedAutomation_0_§§": {
+        "name": "Disc Space Check",
+        "type": "SCRIPT",
+        "description": "Checks the remaining disc space of a file system against a freely choosable threshold (in MiB). Will fail if not enough space is available.",
+        "parameters": [
+          {
+            "name": "target",
+            "description": "Target system where the script will be executed"
+          },
+          {
+            "name": "user",
+            "description": "User ID that is used to run the script"
+          },
+          {
+            "name": "$path",
+            "description": "File path on which to check the file system"
+          },
+          {
+            "name": "$freeSpace",
+            "description": "Amount of free space in MiB required for this automation to not fail"
+          }
+        ],
+        "fields": [
+          {
+            "name": "script_ssh",
+            "description": "script content",
+            "encoding": "base64",
+            "value": "IyEvYmluL2Jhc2gKCmZyZWVTcGFjZT1gZGYgLW0gJHBhdGggfCBncmVwIC12IC1lICdeRmlsZXN5c3RlbScgfCBhd2sgJ3sgcHJpbnQgJDQ7fSdgCgppZiB0ZXN0ICRmcmVlU3BhY2UgLWx0ICR0aHJlc2hvbGQKdGhlbgoJZWNobyAiVGhlcmUgaXMgbm90IGVub3VnaCBzcGFjZSBsZWZ0IG9uIHRoZSBkZXZpY2UgKCRmcmVlU3BhY2UpLiIKCWV4aXQgMQplbHNlCgllY2hvICJFdmVyeXRoaW5nIGlzIGdvb2QuIgpmaQ=="
+          }
+        ]
+      }
+    }
+}
