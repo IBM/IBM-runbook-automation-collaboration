@@ -1,0 +1,35 @@
+[
+  {
+    "name": "Runbook with Approval via Parameter",
+    "description": "This runbook shows how to do an approval via a parameter",
+    "steps": [
+      {
+        "title": "First Action",
+        "description": "<p>Something happening before the approval step.</p><p>In this step the operator performs some actions that need to be done in any case. Typically they may involve investigation of the system. Once these are completed the Operator will proceed with the next step.</p>",
+        "number": 1,
+        "type": "manual"
+      },
+      {
+        "title": "Approval via Parameter",
+        "description": "<p>In this step document your decision on the Approval Process for the task at hand.</p><p>Click on \"Update Parameters\" and enter a new value for the parameter \"approved\".</p><p>You entered:&nbsp;<span class=\"rba-parameter\" data-id=\"approved\"></span>&nbsp;</p><p>Only continue with the next step once your decision has been made and is final!</p>",
+        "number": 2,
+        "type": "manual"
+      },
+      {
+        "title": "Second Action",
+        "description": "<p>In the following steps, the manual steps or the automated steps of the Runbook can use the information from the parameter to control the content of the Runbook and also to control the flow of following automations.</p><p>Example:</p><p>A script automation written in \"perl\" may include the following code:</p><pre><code class=\"language-plaintext\">#!/usr/bin/perl\nif(approved) {\n    // Perform the approved action\n    (…)\n}\nelse {\n    print \"The action has not been approved. This script will not perform any action.\\n\";\n}</code></pre><p>&nbsp;</p><p>Auditing:</p><p>You can retrieve information about the approvals via parameter with the Runbooks API. This allows you to have an audit trail of: <strong>Who</strong> approved or denied the action and <strong>when</strong> that happened<strong>.</strong> For this use the API endpoint <i>GET /runbookinstances</i> or <i>GET /runbookinstances/{runbookInstanceId}</i>. The information is available in the <i>history</i> section of the returned Runbook Instance(s) and will look like this:</p><pre><code class=\"language-plaintext\">\"history\": [\n    {\n      \"action\": \"complete\",\n      \"step\": 1,\n      \"processedAt\": 1620284225171,\n      \"processedBy\": \"johndoe@ibm.com\",\n      \"parameters\": {\n        \"approved\" : false\n      }\n    },\n    {\n      \"action\": \"complete\",\n      \"step\": 2,\n      \"processedAt\": 1620284299999,\n      \"processedBy\": \"johndoe@ibm.com\",\n      \"parameters\": {\n        \"approved\" : true\n      }\n    },\n    {\n      \"action\": \"complete\",\n      \"step\": 3,\n      \"processedAt\": 1620284311111,\n      \"processedBy\": \"johndoe@ibm.com\",\n      \"parameters\": {\n        \"approved\" : true\n      }\n    }\n  ]</code></pre><p>This example shows how the <i>approved</i> parameter was changed from <i>false</i> to <i>true</i> in the second step, which is the approval step for this runbook. If the approval would have been denied, the value would have stayed at <i>false</i>. Note: You can also use other parameter types to signalize approval or rejection. In that case, the values for your parameter will change accordingly (for example you can use an Integer type and use <i>0</i> and <i>1</i>.</p>",
+        "number": 3,
+        "type": "manual"
+      }
+    ],
+    "parameters": [
+      {
+        "name": "approved",
+        "description": "",
+        "type": "boolean",
+        "default": false
+      }
+    ],
+    "tags": []
+  }
+]

@@ -1,0 +1,30 @@
+[
+  {
+    "name": "Runbook with Approval via GoTo",
+    "description": "This runbook shows how to do an approval via GoTo",
+    "steps": [
+      {
+        "title": "First Action",
+        "description": "<p>Something happening before the approval step.</p><p>In this step the operator performs some actions that need to be done in any case. Typically they may involve investigation of the system. Once these are completed the Operator will proceed with the next step.<br>&nbsp;</p>",
+        "number": 1,
+        "type": "manual"
+      },
+      {
+        "title": "Approval via GoTo",
+        "description": "<p>In this step document make your decision on the Approval Process for the task at hand.</p><ol><li>Click on \"Next Step\" to approve the workflow and continue with your actions to perform.</li><li>Click on&nbsp;<span class=\"rba-goto\" data-id=\"end\"></span> &nbsp;to reject the workflow and instead exit this runbook.</li></ol>",
+        "number": 2,
+        "type": "manual"
+      },
+      {
+        "title": "Second Action",
+        "description": "<p>In the following steps, the manual steps or the automated steps the actions depending on the approval will happen. These steps are only accessed, if the Operator did not reject the approval workflow. Any number of steps may follow.</p><p><strong>Auditing</strong>:</p><p>You can retrieve information about the approval via GoTo with the Runbooks API. This allows you to have an audit trail of: Who approved or denied the action and when that happened. For this use the API endpoint GET /runbookinstances or GET /runbookinstances/{runbookInstanceId}. The information is available in the history section of the returned Runbook Instance(s) and will look like this:</p><pre><code class=\"language-plaintext\">\"history\": [\n   {\n     \"action\": \"complete\",\n     \"step\": 1,\n     \"processedAt\": 1620284225171,\n     \"processedBy\": \"johndoe@ibm.com\",\n     \"parameters\": { }\n   },\n   {\n     \"action\": \"goTo\",\n     \"step\": 4,\n     \"processedAt\": 1620284299999,\n     \"processedBy\": \"johndoe@ibm.com\",\n     \"parameters\": { }\n   }\n ]</code></pre><p>This example shows how the approval workflow has been rejected. The second step has not been completed. Instead a goTo action is logged, which ended the runbook execution (by going one step farther than steps available in the runbook). If the approval would have been accepted, the second entry in the history would have had the values \"complete\" for \"action\" and \"2\" for \"step\".</p>",
+        "number": 3,
+        "type": "manual"
+      }
+    ],
+    "parameters": [],
+    "tags": [
+      "approval"
+    ]
+  }
+]
