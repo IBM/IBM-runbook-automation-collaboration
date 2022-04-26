@@ -6,7 +6,7 @@
 
 {
     "name": "Handle high CPU usage on Linux",
-    "description": "This Procedure describes how to handle the situation that a Linux server has to handle high CPU usage.",
+    "description": "This procedure describes how to manage a situation where a Linux server has to handle high CPU usage.",
     "steps": [
         {
             "number": 1,
